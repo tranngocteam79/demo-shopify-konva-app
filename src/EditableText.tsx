@@ -34,11 +34,7 @@ export default function EditableText({ text }: { text: TextState }) {
 
   return (
     <>
-      <EditableTextResize
-        text={text}
-        setIsEditing={setIsEditing}
-        isEditing={isEditing}
-      />
+      <EditableTextResize text={text} setIsEditing={setIsEditing} />
     </>
   );
 }

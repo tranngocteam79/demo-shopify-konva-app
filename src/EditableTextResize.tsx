@@ -14,12 +14,10 @@ import { toggleIsSelected } from "./store/appReducer.ts";
 interface EditableTextResizeProps {
   text: TextState;
   setIsEditing: (arg: boolean) => void;
-  isEditing: boolean;
 }
 export default function EditableTextResize({
   text,
   setIsEditing,
-  isEditing,
 }: EditableTextResizeProps) {
   const {
     id,

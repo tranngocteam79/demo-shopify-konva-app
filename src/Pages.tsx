@@ -7,22 +7,17 @@ import { RootState } from "./store/store.ts";
 interface PageProps {
   sceneWidth: number;
   onUpdateTotalHeight: (totalHeight: number) => void;
-  totalHeight: number;
 }
 
 // Add more initial layers with shapes as needed
-export default function Pages({
-  sceneWidth,
-  onUpdateTotalHeight,
-  totalHeight,
-}: PageProps) {
+export default function Pages({ sceneWidth, onUpdateTotalHeight }: PageProps) {
   const { pagesData } = useSelector((state: RootState) => state.app);
   const [pagesHeight, setPagesHeight] = useState(0);
   // Calculate the scale factor to fit the pages within the scene width
   const scaleFactor = sceneWidth / 1350; // Assuming the original page width is 1350px
 
   useEffect(() => {
-    const heightSum = pagesData.reduce((sum, page, idx) => {
+    const heightSum = pagesData.reduce((sum, page) => {
       return sum + page.height + 30;
     }, 0);
     setPagesHeight(heightSum);

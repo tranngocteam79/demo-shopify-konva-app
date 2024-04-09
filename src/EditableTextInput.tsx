@@ -22,14 +22,14 @@ function getStyle(text: TextState) {
     fontFamily: text.fontFamily,
     fontWeight: text.fontStyle,
     lineHeight: "1em",
-    overflowY: "hidden",
+    OverflowY: "hidden",
   };
   if (isFirefox) {
     return baseStyle;
   }
   return {
     ...baseStyle,
-    margintop: "-4px",
+    marginTop: "-4px",
   };
 }
 

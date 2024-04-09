@@ -8,7 +8,7 @@ import { toggleFontLoaded, toggleIsSelected } from "./store/appReducer.ts";
 import ControlPanel from "./ControlPanel.tsx";
 import { FONT_LISTS, SCENE_WIDTH } from "./util/constants.ts";
 
-const Scene = (props) => {
+const Scene = () => {
   const parentRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<Konva.Stage | null>(null);
   const [totalHeight, setTotalHeight] = useState(0);
@@ -157,12 +157,7 @@ const Scene = (props) => {
         {/*    height={100}*/}
         {/*  />*/}
         {/*</Layer>*/}
-        <Pages
-          sceneWidth={sceneWidth}
-          onUpdateTotalHeight={setTotalHeight}
-          totalHeight={totalHeight}
-        />
-        {props.children}
+        <Pages sceneWidth={sceneWidth} onUpdateTotalHeight={setTotalHeight} />
       </Stage>
       <div style={{ visibility: "hidden" }} ref={endOfStageRef}></div>
       {/*<button onClick={handleGetLayers}>Get Layers</button>*/}
