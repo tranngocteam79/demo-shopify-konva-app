@@ -160,25 +160,6 @@ export default function ControlPanel({
     >
       <Button
         onClick={() => {
-          const newText = {
-            id: nanoid(),
-            textValue: "Hello World" + Math.random(),
-            fontSize: 40,
-            fontColor: "red",
-            fontStyle: "bold",
-            fontFamily: "Arial",
-            pageId: 1,
-            width: 600,
-            height: 600,
-            x: 50,
-            y: 50,
-          };
-        }}
-      >
-        Add text block
-      </Button>
-      <Button
-        onClick={() => {
           onOpenAddPagePanel();
           dispatch(
             toggleIsSelected({ nodeId: null, isSelected: false, layerId: null })
